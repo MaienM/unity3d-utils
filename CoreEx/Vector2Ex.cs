@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace MaienM.UnityUtils.CoreEx
 {
     /// <summary>
