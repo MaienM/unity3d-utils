@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Collections;
 
-namespace MaienM.PrefabRenderer
+namespace MaienM.UnityUtils.PrefabRenderer
 {
     /// <summary>
     /// Renders prefabs and stores the renders into renderedtextures.
@@ -73,7 +73,7 @@ namespace MaienM.PrefabRenderer
                 tex = new RenderTexture(TextureWidth, TextureHeight, TextureDepth, RenderTextureFormat.Default);
                 gameObject.camera.targetTexture = tex;
                 yield return new WaitForEndOfFrame();
-                RenderedTextures[prefab] = tex;
+                RenderedTextures[prefab.name] = tex;
                 gameObject.camera.targetTexture = null;
                 Destroy(obj);
             }

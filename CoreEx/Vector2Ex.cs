@@ -29,6 +29,17 @@ namespace MaienM.UnityUtils.CoreEx
         {
             return new Rect(positionVector.x, positionVector.y, sizeVector.x, sizeVector.y);
         }
+
+        /// <summary>
+        /// Connvert a Vector2 into a Vector3, adding a z parameter.
+        /// </summary>
+        /// <param name="vector">The Vector2 to convert</param>
+        /// <param name="z">The z value of the Vector3</param>
+        /// <returns>The new Vector3</returns>
+        public static Vector3 ToVector3(this Vector2 vector, int z = 0)
+        {
+            return new Vector3(vector.x, vector.y, z);
+        }
         #endregion
     }
 }

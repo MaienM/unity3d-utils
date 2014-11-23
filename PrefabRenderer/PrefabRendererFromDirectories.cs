@@ -1,9 +1,12 @@
-﻿
-namespace MaienM.PrefabRenderer
+﻿using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+namespace MaienM.UnityUtils.PrefabRenderer
 {
     public class PrefabRendererFromDirectories : PrefabRenderer
     {
-        public List<String> Directories;
+        public List<string> Directories;
 
         new public void Start()
         {
@@ -16,12 +19,12 @@ namespace MaienM.PrefabRenderer
         /// </summary>
         private void LoadPrefabsFromDirectories()
         {
-            foreach (string dirName in Directories)
+            foreach (string dirname in Directories)
             {
                 string path = Path.Combine("Assets/Resources/", dirname);
                 if (!Directory.Exists(path))
                 {
-                    Debug.Log_Error(string.Format("The folder {0} doesn't exist. We cannot load prefabs from there.", path));
+                    Debug.LogError(string.Format("The folder {0} doesn't exist. We cannot load prefabs from there.", path));
                     continue;
                 }
                 DirectoryInfo dir = new DirectoryInfo(path);
